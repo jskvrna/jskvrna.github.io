@@ -11,6 +11,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="icon" href="images/profile_pic.png" type="image/png">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			#main {
+				text-align: center;
+			}
+			#main ul:not(.actions) {
+				display: inline-block;
+				text-align: left;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -49,12 +58,12 @@
 						<ul>
 							<li>
 								<p><strong>Arxiv: MonoSOWA: Scalable monocular 3D Object detector Without human Annotations</strong></p>
-								<a href="images/monosowa_intro.png" target="_blank"><img src="images/monosowa_intro.png" alt="MonoSOWA teaser image" style="max-width: 500px; height: auto; display: block; margin: 1em 0;"></a>
+								<a href="images/monosowa_intro.png" target="_blank"><img src="images/monosowa_intro.png" alt="MonoSOWA teaser image" style="max-width: 700px; height: auto; display: block; margin: 1em auto;"></a>
 								<p><a href="https://arxiv.org/abs/2501.09481">ArXiv</a></p>
 							</li>
 							<li>
 								<p><strong>ECCV 2024: TCC-Det: Temporarily consistent cues for weakly-supervised 3D detection</strong></p>
-								<a href="images/ECCV 2024 TCC-Det poster V3.png" target="_blank"><img src="images/ECCV 2024 TCC-Det poster V3.png" alt="TCC-Det poster" style="max-width: 500px; height: auto; display: block; margin: 1em 0;"></a>
+								<a href="images/ECCV 2024 TCC-Det poster V3.png" target="_blank"><img src="images/ECCV 2024 TCC-Det poster V3.png" alt="TCC-Det poster" style="max-width: 700px; height: auto; display: block; margin: 1em auto;"></a>
 								<p>
 									<a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03732.pdf">Pdf</a> |
 									<a href="https://github.com/jskvrna/TCC-Det">Github</a> |
@@ -115,22 +124,20 @@
 					<section id="touch">
 						<h2>Get In Touch</h2>
 						<p>If you are interested in any of my work, feel free to contact me. I am always open to new opportunities and collaborations!</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										Na Zderaze 4<br />
-										Prague, 120 00<br />
-										The Czech Republic
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="mailto:skvrnjan@fel.cvut.cz">skvrnjan@fel.cvut.cz</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+						<ul class="labeled-icons" style="list-style: none; padding: 0;">
+							<li style="display: flex; align-items: flex-start; margin-bottom: 1em;">
+								<h3 class="icon solid fa-home" style="margin: 0 1em 0 0;"><span class="label">Address</span></h3>
+								<div>
+									Na Zderaze 4<br />
+									Prague, 120 00<br />
+									The Czech Republic
+								</div>
+							</li>
+							<li style="display: flex; align-items: flex-start;">
+								<h3 class="icon solid fa-envelope" style="margin: 0 1em 0 0;"><span class="label">Email</span></h3>
+								<a href="mailto:skvrnjan@fel.cvut.cz">skvrnjan@fel.cvut.cz</a>
+							</li>
+						</ul>
 					</section>
 
 			</div>
