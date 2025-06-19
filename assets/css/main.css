@@ -2699,7 +2699,30 @@ input, select, textarea {
 				margin-top: 0;
 				padding-top: 0;
 			}
+#main ul:not(.actions) {
+				display: inline-block;
+				text-align: left;
+			}
+			#cookie-banner {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background: #333;
+				color: #fff;
+				padding: 15px;
+				text-align: center;
+				z-index: 1000;
+			}
+			#cookie-banner p {
+				margin: 0 0 10px 0;
+			}
+			#cookie-banner .button {
+				cursor: pointer;
+			}
 
+
+/* Misc */
 /* Poptrox */
 
 	@-moz-keyframes spin {
