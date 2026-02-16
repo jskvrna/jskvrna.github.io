@@ -252,6 +252,10 @@ a:hover {
     align-items: center;
 }
 
+.hero-image {
+    max-width: 220px;
+}
+
 .hero-image img {
     border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
