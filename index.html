@@ -1,251 +1,209 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Jan Skvrna</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="icon" href="images/profile_pic.png" type="image/png">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			#main {
-				text-align: center;
-			}
-			#main ul:not(.actions) {
-				display: inline-block;
-				text-align: left;
-			}
-		</style>
-		<!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYYSZ6V8BF"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
 
-            // This function will run the analytics tracking
-            function runAnalytics() {
-                gtag('config', 'G-NYYSZ6V8BF');
-            }
-        </script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Jan Skvrna - Computer Vision PhD Student specializing in Weakly-Supervised 3D Detection.">
+	<title>Jan Skvrna | Computer Vision Researcher</title>
+	<link rel="icon" href="images/profile_pic.png" type="image/png">
 
-	</head>
-	<body class="is-preload">
+	<!-- Fonts: Inter for UI, Merriweather for reading/academic feel -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:tight,wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+		rel="stylesheet">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/profile_pic.png" alt="Jan Skvrna" /></a>
-					<h1><strong>Jan Skvrna</strong></h1>
-					<p>Computer Vision Ph.D. Student<br />
-					Visual Recognition Group, CTU FEE<br />
-					Dept. of Cybernetics, Prague.</p>
-				</div>
-			</header>
+	<!-- Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-		<!-- Main -->
-			<div id="main">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="assets/css/premium.css">
 
-				<!-- One -->
-					<section id="introduction">
-						<header class="major">
-							<h2>About Me</h2>
-						</header>
-						<p>I am a computer vision PhD student at <a href="https://cyber.felk.cvut.cz/research/groups-teams/vrg/">Visual Recognition Group</a>, <a href="https://fel.cvut.cz/en">Czech Technical University in Prague, Faculty of Electrical Engineering</a>, <a href="https://cyber.felk.cvut.cz/">Department of Cybernetics</a>. <a href="https://cmp.felk.cvut.cz/~neumalu1/">Lukas Neumann</a> is my supervisor.</p>
-						<p>My primary focus lies in the weakly-supervised 3D detection for autonomous driving. My current research is on 3D detectors weakly-supervised by temporarily consistent 2D cues. In other words, using only an off-the-shelf visual component, such as Mask-RCNN, to generate pseudo-ground truth 3D labels.</p>
-						<p>I graduated from the MSc programme in <a href="https://kyr.fel.cvut.cz/en">Cybernetics And Robotics</a> at <a href="https://fel.cvut.cz/en">Czech Technical University</a> with honours in 2024. My <a href="https://dspace.cvut.cz/handle/10467/113392?locale-attribute=en"><i>master's thesis</i></a>, focused on the Weakly-supervised 3D object detection for autonomous driving, has received a Dean's Award.</p>
-						<p>In my free time, I do running, orienteering, bouldering and walking around the city. I also enjoy a cup of good coffee.</p>
-						<ul class="actions">
-							<li><a href="#publications" class="button">Publications</a></li><li><a href="#education" class="button">Education</a></li><li><a href="#awards" class="button">Awards</a></li>
-							<li><a href="cv.pdf" class="button icon solid fa-download" target="_blank">Download CV</a></li>
-						</ul>
-					</section>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYYSZ6V8BF"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-				<!-- Two -->
-					<section id="publications">
-						<h2>Publications</h2>
-						<ul>
-							<li>
-								<p><strong>ICCV 2025: MonoSOWA: Scalable monocular 3D Object detector Without human Annotations</strong></p>
-								<p>
-									MonoSOWA enables 3D object detection from a single RGB camera without human annotations, using Mask-RCNN for object detection and PseudoLiDAR for 3D scene understanding. Our Local Object Motion Model separates object and camera motion with ~700× speedup over prior work, enabling multi-dataset training across different camera configurations. Evaluated on three public datasets, it significantly outperforms previous methods while requiring no human labels.
-								</p>
-								<a href="images/ICCV_poster_final.png" target="_blank"><img src="images/ICCV_poster_final.png" alt="MonoSOWA teaser image" style="max-width: 700px; height: auto; display: block; margin: 1em auto;"></a>
-								<p style="text-align: center;">
-									<a href="https://arxiv.org/abs/2501.09481">ArXiv</a> |
-									<a href="https://github.com/jskvrna/MonoSOWA">Github</a>
-								</p>
-							</li>
-							<li>
-								<p><strong>ECCV 2024: TCC-Det: Temporarily consistent cues for weakly-supervised 3D detection</strong></p>
-								<p>
-									TCC-Det addresses the challenge of training 3D object detectors in LiDAR point clouds without manual annotations. By leveraging off-the-shelf vision components and the inherent consistency of the real world, our method enables training using large-scale sensor recordings, significantly reducing costs and increasing data availability. Evaluated on KITTI and Waymo Open datasets, it outperforms prior weakly-supervised approaches and approaches the performance of fully-supervised methods using human 3D labels.
-								</p>
-								<a href="images/ECCV 2024 TCC-Det poster V3.png" target="_blank"><img src="images/ECCV 2024 TCC-Det poster V3.png" alt="TCC-Det poster" style="max-width: 700px; height: auto; display: block; margin: 1em auto;"></a>
-								<p style="text-align: center;">
-									<a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03732.pdf">Pdf</a> |
-									<a href="https://github.com/jskvrna/TCC-Det">Github</a> |
-									<a href="https://eccv2024.ecva.net/virtual/2024/poster/239">ECCV Page</a> |
-									<a href="https://youtu.be/JBy_NYfLLkg?si=5lHOiZ1lTl6ToSNa">Video</a>
-								</p>
-							</li>
-						</ul>
-					</section>
+		function runAnalytics() {
+			gtag('config', 'G-NYYSZ6V8BF');
+		}
+	</script>
+</head>
 
-				<!-- Three -->
-					<section id="education">
-						<h2>Education</h2>
-						<ul>
-							<li>
-								<p>
-									PhD programme in Informatics at <a href="https://vrg.fel.cvut.cz/">Visual Recognition Group</a> 2024 - today
-									<br>Supervisor: <a href="https://cmp.felk.cvut.cz/~neumalu1/">Lukas Neumann</a>
-									<br><a href="https://fel.cvut.cz/en">Czech Technical University in Prague, Faculty of Electrical Engineering</a>
-								</p>
-							</li>
-							<li>
-								<p>MSc programme <a href="https://kyr.fel.cvut.cz/en">Cybernetics And Robotics</a> 2021 - 2024 (<strong>with honours</strong>)
-									<br><a href="https://fel.cvut.cz/en">Czech Technical University in Prague, Faculty of Electrical Engineering</a>
-									<br><a href="https://dspace.cvut.cz/handle/10467/113392?locale-attribute=en">Thesis - 3D Object Detection for Autonomous Cars Weakly Supervised by 2D Cues</a> (<strong>Dean's Award</strong>)</p>
-							</li>
-							<li>
-								<p>Study abroad (Erasmus) 2022 - 2023
-									<br><a href="https://www.sdu.dk/en/om-sdu/fakulteterne/teknik">University of Southern Denmark, Faculty of Engineering</a></p>
-							</li>
-							<li>
-								<p>BSc programme <a href="https://kyr.fel.cvut.cz/en">Cybernetics And Robotics</a> 2018 - 2021
-									<br><a href="https://fel.cvut.cz/en">Czech Technical University in Prague, Faculty of Electrical Engineering</a>
-									<br><a href="https://dspace.cvut.cz/handle/10467/94474?locale-attribute=en"> Thesis - Robotic arm for a mobile robot</a></p>
-							</li>
-						</ul>
-					</section>
+<body>
 
-				<!-- Four -->
-					<section id="awards">
-						<h2>Awards</h2>
-						<ul>
-							<li>
-								<p>Winner of the <a href="https://huggingface.co/spaces/usm3d/S23DR2025" target="_blank">Structured Semantic 3D Reconstruction (S23DR) Challenge 2025</a> (10k USD prize) at the Urban Scene Modelling workshop, CVPR 2025.
-									<br><a href="https://huggingface.co/jskvrna/hoho" target="_blank">Submission</a> | <a href="https://arxiv.org/abs/2506.16421">ArXiv</a>
-								</p>
-							</li>
-							<li>
-								<p>Dean's Award for <a href="https://dspace.cvut.cz/handle/10467/113392?locale-attribute=en">master's thesis</a>, 2024.</p>
-							</li>
-							<li>
-								<p>6th best master's thesis on the topic of Industry 4.0 in 2024. Award given by <a href="https://www.cenasiemens.cz/">Cena Wernera Von Siemense</a>, which focuses on the best master's and doctor's thesis in technical field on Czech Universities and Research Institutes.</p>
-							</li>
-						</ul>
-					</section>
-
-				<!-- Five -->
-					<section id="touch">
-						<h2>Get In Touch</h2>
-						<p>If you are interested in any of my work, feel free to contact me. I am always open to new opportunities and collaborations!</p>
-						<ul class="labeled-icons" style="list-style: none; padding: 0;">
-							<li style="display: flex; align-items: flex-start; margin-bottom: 1em;">
-								<h3 class="icon solid fa-home" style="margin: 0 1em 0 0;"><span class="label">Address</span></h3>
-								<div>
-									Na Zderaze 4<br />
-									Prague, 120 00<br />
-									The Czech Republic
-								</div>
-							</li>
-							<li style="display: flex; align-items: flex-start;">
-								<h3 class="icon solid fa-envelope" style="margin: 0 1em 0 0;"><span class="label">Email</span></h3>
-								<a href="mailto:jan.skvrna@cvut.cz">jan.skvrna@cvut.cz</a>
-							</li>
-						</ul>
-					</section>
-
+	<nav class="navbar">
+		<div class="container">
+			<a href="#" class="logo">Jan Skvrna</a>
+			<div class="nav-links">
+				<a href="#about">About</a>
+				<a href="#news">News</a>
+				<a href="#publications">Publications</a>
+				<a href="cv.pdf" class="nav-cta" target="_blank">CV <i class="fas fa-download"></i></a>
 			</div>
+		</div>
+	</nav>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/jskvrna" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/jan-škvrna-5914301b1" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://scholar.google.de/citations?user=Jyx4Qj4AAAAJ&hl=en&authuser=1" class="icon solid fa-book-open"><span class="label">Scholar</span></a></li>
-						<li><a href="mailto:jan.skvrna@cvut.cz" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; 2025 Jan Skvrna</li>
-						<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-					</ul>
+	<header class="hero">
+		<div class="container hero-content">
+			<div class="hero-text">
+				<h1>Building scalable 3D understanding with minimal supervision.</h1>
+				<p class="subtitle">Computer Vision PhD Student at CTU Prague.</p>
+				<div class="hero-cta">
+					<a href="cv.pdf" class="btn btn-primary" target="_blank"><i class="fas fa-file-download"></i>
+						Download CV</a>
+					<a href="#publications" class="btn btn-secondary">View Research</a>
 				</div>
-			</footer>
+			</div>
+			<div class="hero-image">
+				<img src="images/profile_pic.png" alt="Jan Skvrna">
+			</div>
+		</div>
+	</header>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-			$(document).ready(function(){
-			  // Add smooth scrolling to all links with a hash
-			  $("a[href*='#']").on('click', function(event) {
+	<section id="news" class="section highlight-section">
+		<div class="container">
+			<div class="highlight-card">
+				<div class="highlight-icon">
+					<i class="fas fa-trophy"></i>
+				</div>
+				<div class="highlight-content">
+					<h3>Winner of S23DR Challenge 2025</h3>
+					<p>Secured 1st place (and $10k prize) at the CVPR 2025 Structured Semantic 3D Reconstruction
+						Challenge.</p>
+					<a href="https://huggingface.co/spaces/usm3d/S23DR2025" target="_blank" class="link-arrow">View
+						Leaderboard</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
-				// Make sure this.hash has a value before overriding default behavior
-				if (this.hash !== "") {
-				  // Prevent default anchor click behavior
-				  event.preventDefault();
+	<section id="about" class="section">
+		<div class="container">
+			<h2 class="section-title">About Me</h2>
+			<div class="about-grid">
+				<div class="about-text">
+					<p>I am a PhD student at the <a href="https://cyber.felk.cvut.cz/research/groups-teams/vrg/">Visual
+							Recognition Group</a>, Czech Technical University, advised by <a
+							href="https://cmp.felk.cvut.cz/~neumalu1/">Lukas Neumann</a>.</p>
+					<p>My research focuses on <strong>Weakly-Supervised 3D Detection</strong> for autonomous driving. I
+						aim to reduce the reliance on expensive 3D annotations by leveraging temporal consistency and 2D
+						cues from off-the-shelf vision models.</p>
+					<p>Previously, I completed my MSc with honours, receiving the Dean's Award for my thesis on 3D
+						object detection.</p>
+				</div>
+				<div class="about-stats">
+					<div class="stat-item">
+						<span class="stat-number">2</span>
+						<span class="stat-label">Core A* Papers</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">1st</span>
+						<span class="stat-label">CVPR Challenge</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-				  // Store hash
-				  var hash = this.hash;
+	<section id="publications" class="section bg-light">
+		<div class="container">
+			<h2 class="section-title">Selected Publications</h2>
 
-				  // Using jQuery's animate() method to add smooth page scroll
-				  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-				  $('html, body').animate({
-					scrollTop: $(hash).offset().top
-				  }, 800, function(){
+			<!-- MonoSOWA -->
+			<article class="pub-card">
+				<div class="pub-image">
+					<!-- Using the existing image path -->
+					<img src="images/ICCV_poster_final.png" alt="MonoSOWA Poster">
+				</div>
+				<div class="pub-content">
+					<div class="pub-meta">ICCV 2025</div>
+					<h3 class="pub-title">MonoSOWA: Scalable monocular 3D Object detector Without human Annotations</h3>
+					<p class="pub-desc">A novel approach enabling 3D object detection from a single RGB camera without
+						human annotations. Introduces a Local Object Motion Model with ~700× speedup over prior work.
+					</p>
+					<div class="pub-links">
+						<a href="https://arxiv.org/abs/2501.09481" class="btn btn-sm btn-outline"><i
+								class="far fa-file-pdf"></i> Paper</a>
+						<a href="https://github.com/jskvrna/MonoSOWA" class="btn btn-sm btn-outline"><i
+								class="fab fa-github"></i> Code</a>
+					</div>
+				</div>
+			</article>
 
-					// Add hash (#) to URL when done scrolling (default click behavior)
-					window.location.hash = hash;
-				  });
-				} // End if
-			  });
+			<!-- TCC-Det -->
+			<article class="pub-card">
+				<div class="pub-image">
+					<img src="images/ECCV%202024%20TCC-Det%20poster%20V3.png" alt="TCC-Det Poster">
+				</div>
+				<div class="pub-content">
+					<div class="pub-meta">ECCV 2024</div>
+					<h3 class="pub-title">TCC-Det: Temporarily consistent cues for weakly-supervised 3D detection</h3>
+					<p class="pub-desc">Leveraging temporal consistency to train 3D detectors without 3D labels.
+						Outperforms prior weakly-supervised methods on KITTI and Waymo datasets.</p>
+					<div class="pub-links">
+						<a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03732.pdf"
+							class="btn btn-sm btn-outline"><i class="far fa-file-pdf"></i> Paper</a>
+						<a href="https://github.com/jskvrna/TCC-Det" class="btn btn-sm btn-outline"><i
+								class="fab fa-github"></i> Code</a>
+						<a href="https://eccv2024.ecva.net/virtual/2024/poster/239"
+							class="btn btn-sm btn-outline">Project</a>
+						<a href="https://youtu.be/JBy_NYfLLkg?si=5lHOiZ1lTl6ToSNa" class="btn btn-sm btn-outline"><i
+								class="fab fa-youtube"></i> Video</a>
+					</div>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-links">
+				<a href="https://github.com/jskvrna" aria-label="Github"><i class="fab fa-github"></i></a>
+				<a href="https://www.linkedin.com/in/jan-škvrna-5914301b1" aria-label="LinkedIn"><i
+						class="fab fa-linkedin"></i></a>
+				<a href="https://scholar.google.de/citations?user=Jyx4Qj4AAAAJ&hl=en&authuser=1"
+					aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+				<a href="mailto:jan.skvrna@cvut.cz" aria-label="Email"><i class="fas fa-envelope"></i></a>
+			</div>
+			<p class="copyright">&copy; 2025 Jan Skvrna. Built with a focus on clean research communication.</p>
+		</div>
+	</footer>
+
+	<!-- Cookie Consent -->
+	<div id="cookie-banner" class="cookie-banner">
+		<div class="container cookie-content">
+			<p>This site uses cookies for analytics.</p>
+			<button id="accept-cookies" class="btn btn-sm btn-primary">Accept</button>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const cookieBanner = document.getElementById('cookie-banner');
+			const acceptButton = document.getElementById('accept-cookies');
+
+			if (document.cookie.split(';').some((item) => item.trim().startsWith('cookie_consent=true'))) {
+				cookieBanner.style.display = 'none';
+				runAnalytics();
+			} else {
+				cookieBanner.style.display = 'block';
+			}
+
+			acceptButton.addEventListener('click', function () {
+				const d = new Date();
+				d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+				document.cookie = "cookie_consent=true; expires=" + d.toUTCString() + "; path=/";
+				cookieBanner.style.display = 'none';
+				runAnalytics();
 			});
-			</script>
+		});
+	</script>
+</body>
 
-			<!-- Cookie Consent Banner -->
-			<div id="cookie-banner">
-				<p>This website uses cookies for analytics. By clicking "Accept", you agree to this use.</p>
-				<a id="accept-cookies" class="button">Accept</a>
-			</div>
-
-			<script>
-				document.addEventListener('DOMContentLoaded', function() {
-					const cookieBanner = document.getElementById('cookie-banner');
-					const acceptButton = document.getElementById('accept-cookies');
-
-					// Check if consent has already been given
-					if (document.cookie.split(';').some((item) => item.trim().startsWith('cookie_consent=true'))) {
-						cookieBanner.style.display = 'none';
-						runAnalytics(); // Run analytics if consent is already there
-					} else {
-						cookieBanner.style.display = 'block';
-					}
-
-					acceptButton.addEventListener('click', function() {
-						// Set a cookie to remember consent, expires in 1 year
-						const d = new Date();
-						d.setTime(d.getTime() + (365*24*60*60*1000));
-						let expires = "expires="+ d.toUTCString();
-						document.cookie = "cookie_consent=true;" + expires + ";path=/";
-
-						cookieBanner.style.display = 'none';
-						runAnalytics(); // Run analytics now that consent is given
-					});
-				});
-			</script>
-
-	</body>
 </html>
-
