@@ -229,7 +229,7 @@ a:hover {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: var(--spacing-lg);
-    align-items: center;
+    align-items: start;
 }
 
 .hero h1 {
