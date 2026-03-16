@@ -414,10 +414,9 @@ a:hover {
 }
 
 .poster-modal-image {
-    max-width: min(92vw, 1200px);
-    max-height: 90vh;
-    width: auto;
-    height: auto;
+    width: 75vw;
+    height: 75vh;
+    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -596,6 +595,11 @@ a:hover {
 
     .poster-modal {
         padding: 1rem;
+    }
+
+    .poster-modal-image {
+        width: 92vw;
+        height: 82vh;
     }
 
     .poster-modal-close {
