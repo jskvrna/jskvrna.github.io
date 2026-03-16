@@ -414,12 +414,13 @@ a:hover {
 }
 
 .poster-modal-image {
-    width: 75vw;
-    height: 75vh;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: auto;
+    height: auto;
+    max-width: 75vw;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
+    border: none;
 }
 
 .poster-modal-close {
@@ -598,8 +599,8 @@ a:hover {
     }
 
     .poster-modal-image {
-        width: 92vw;
-        height: 82vh;
+        max-width: 92vw;
+        max-height: 82vh;
     }
 
     .poster-modal-close {
