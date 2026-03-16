@@ -183,10 +183,69 @@
 		</div>
 	</div>
 
+	<!-- Poster Popup Modal -->
+	<div id="poster-modal" class="poster-modal" role="dialog" aria-modal="true" aria-hidden="true"
+		aria-label="Poster preview">
+		<button id="poster-modal-close" class="poster-modal-close" type="button" aria-label="Close poster preview">
+			<i class="fas fa-xmark" aria-hidden="true"></i>
+		</button>
+		<img id="poster-modal-image" src="" alt="Poster preview" class="poster-modal-image">
+	</div>
+
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			const cookieBanner = document.getElementById('cookie-banner');
 			const acceptButton = document.getElementById('accept-cookies');
+			const posterModal = document.getElementById('poster-modal');
+			const posterModalImage = document.getElementById('poster-modal-image');
+			const posterModalClose = document.getElementById('poster-modal-close');
+			const publicationImages = document.querySelectorAll('.pub-image img');
+
+			function openPosterModal(image) {
+				posterModalImage.src = image.src;
+				posterModalImage.alt = image.alt;
+				posterModal.classList.add('is-open');
+				posterModal.setAttribute('aria-hidden', 'false');
+				document.body.style.overflow = 'hidden';
+			}
+
+			function closePosterModal() {
+				posterModal.classList.remove('is-open');
+				posterModal.setAttribute('aria-hidden', 'true');
+				posterModalImage.src = '';
+				document.body.style.overflow = '';
+			}
+
+			publicationImages.forEach(function (image) {
+				image.setAttribute('tabindex', '0');
+				image.setAttribute('role', 'button');
+				image.setAttribute('aria-haspopup', 'dialog');
+
+				image.addEventListener('click', function () {
+					openPosterModal(image);
+				});
+
+				image.addEventListener('keydown', function (event) {
+					if (event.key === 'Enter' || event.key === ' ') {
+						event.preventDefault();
+						openPosterModal(image);
+					}
+				});
+			});
+
+			posterModalClose.addEventListener('click', closePosterModal);
+
+			posterModal.addEventListener('click', function (event) {
+				if (event.target === posterModal) {
+					closePosterModal();
+				}
+			});
+
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape' && posterModal.classList.contains('is-open')) {
+					closePosterModal();
+				}
+			});
 
 			if (document.cookie.split(';').some((item) => item.trim().startsWith('cookie_consent=true'))) {
 				cookieBanner.style.display = 'none';
