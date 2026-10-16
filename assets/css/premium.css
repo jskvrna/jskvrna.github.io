@@ -372,7 +372,6 @@ a:hover {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: var(--spacing-md);
-    align-items: center;
     margin-bottom: var(--spacing-lg);
     background: white;
     /* Optional: Card style 
@@ -380,12 +379,6 @@ a:hover {
     padding: var(--spacing-md);
     border-radius: 12px;
     */
-}
-
-.pub-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .pub-image img {
