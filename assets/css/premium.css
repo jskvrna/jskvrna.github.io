@@ -544,6 +544,105 @@ a:hover {
 }
 
 /* Mobile Responsiveness */
+/* Research threads */
+.thread-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.thread-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+}
+
+.thread-kicker {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.thread-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.thread-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: var(--spacing-sm);
+}
+
+.thread-metrics {
+    list-style: none;
+    margin: 0 0 var(--spacing-sm);
+    padding: 0;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.thread-metrics li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.35rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.thread-metrics span {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    min-width: 4.5rem;
+}
+
+.thread-pubs {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0 !important;
+}
+
+/* Background */
+.bg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.bg-col h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin: var(--spacing-sm) 0 var(--spacing-xs);
+}
+
+.bg-col h3:first-child {
+    margin-top: 0;
+}
+
+.bg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bg-list li {
+    font-size: 0.95rem;
+    color: #333;
+    padding: 0.3rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -574,6 +673,11 @@ a:hover {
     }
 
     .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thread-grid,
+    .bg-grid {
         grid-template-columns: 1fr;
     }
 

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description"
-		content="Jan Skvrna - Computer Vision PhD Student specializing in Weakly-Supervised 3D Detection.">
+		content="Jan Skvrna - Computer Vision PhD researcher at CTU Prague: label-free 3D detection and generative 3D reconstruction (ECCV, ICCV, WACV, IJCV; 2x CVPR S23DR challenge winner).">
 	<title>Jan Skvrna | Computer Vision Researcher</title>
 	<link rel="icon" href="images/profile_pic.png" type="image/png">
 
@@ -42,8 +42,9 @@
 			<a href="#" class="logo">Jan Skvrna</a>
 			<div class="nav-links">
 				<a href="#about">About</a>
-				<a href="#news">News</a>
+				<a href="#research">Research</a>
 				<a href="#publications">Publications</a>
+				<a href="#background">Background</a>
 				<a href="cv.pdf" class="nav-cta" target="_blank">CV <i class="fas fa-download"></i></a>
 			</div>
 		</div>
@@ -52,8 +53,9 @@
 	<header class="hero">
 		<div class="container hero-content">
 			<div class="hero-text">
-				<h1>Building scalable 3D understanding with minimal supervision.</h1>
-				<p class="subtitle">Computer Vision PhD Student at CTU Prague.</p>
+				<h1>3D perception without labels. Generative models for 3D structure.</h1>
+				<p class="subtitle">Computer Vision PhD researcher at CTU Prague &middot; ECCV, ICCV, WACV &amp; IJCV papers
+					&middot; 2&times; winner of the CVPR S23DR challenge</p>
 				<div class="hero-cta">
 					<a href="cv.pdf" class="btn btn-primary" target="_blank"><i class="fas fa-file-download"></i>
 						Download CV</a>
@@ -73,9 +75,10 @@
 					<i class="fas fa-trophy"></i>
 				</div>
 				<div class="highlight-content">
-					<h3>Winner of S23DR Challenge 2026</h3>
-					<p>Secured 1st place at the CVPR 2026 Structured Semantic 3D Reconstruction Challenge, following
-						our 2025 win.</p>
+					<h3>WireDiT accepted to WACV 2027</h3>
+					<p>Our vertex-slot diffusion transformer for 3D wireframe reconstruction, the method behind our
+						1st place at the CVPR 2026 Structured Semantic 3D Reconstruction Challenge (following our 2025
+						win), was accepted to WACV 2027.</p>
 					<a href="https://huggingface.co/spaces/usm3d/S23DR2026" target="_blank" class="link-arrow">View
 						Leaderboard</a>
 				</div>
@@ -91,16 +94,19 @@
 					<p>I am a PhD student at the <a href="https://cyber.felk.cvut.cz/research/groups-teams/vrg/">Visual
 							Recognition Group</a>, Czech Technical University, advised by <a
 							href="https://cmp.felk.cvut.cz/~neumalu1/">Lukas Neumann</a>.</p>
-					<p>My research focuses on <strong>Weakly-Supervised 3D Detection</strong> for autonomous driving. I
-						aim to reduce the reliance on expensive 3D annotations by leveraging temporal consistency and 2D
-						cues from off-the-shelf vision models.</p>
-					<p>Previously, I completed my MSc with honours, receiving the Dean's Award for my thesis on 3D
-						object detection.</p>
+					<p>I work on two threads. <strong>Label-free 3D detection</strong>: training monocular and LiDAR 3D
+						detectors with no human 3D annotations, using temporal consistency and off-the-shelf 2D vision
+						models (TCC-Det, MonoSOWA, MonoSOWA++). <strong>Generative 3D reconstruction</strong>: diffusion
+						transformers that turn sparse street-level captures into metric building wireframes (WireDiT),
+						the method behind our two S23DR challenge wins.</p>
+					<p>I build the full stack myself, from data pipelines to multi-GPU training and released code.
+						Before the PhD I spent three years writing production C/C++ firmware, and I completed my MSc
+						with honours and the Dean's Award for my thesis on 3D object detection.</p>
 				</div>
 				<div class="about-stats">
 					<div class="stat-item">
-						<span class="stat-number">2</span>
-						<span class="stat-label">Core A* Papers</span>
+						<span class="stat-number">3</span>
+						<span class="stat-label">Core A*/A Papers</span>
 					</div>
 					<div class="stat-item">
 						<span class="stat-number">1</span>
@@ -115,9 +121,65 @@
 		</div>
 	</section>
 
-	<section id="publications" class="section bg-light">
+	<section id="research" class="section bg-light">
+		<div class="container">
+			<h2 class="section-title">What I Build</h2>
+			<div class="thread-grid">
+				<article class="thread-card">
+					<div class="thread-kicker">Generative 3D reconstruction</div>
+					<h3>Metric building wireframes from a short street-level capture</h3>
+					<p>A few photographs of a house from the street, no drone, become a sparse SfM point cloud with
+						monocular depth and semantics. WireDiT, a flow-matching diffusion transformer, denoises 64 vertex
+						slots into a 3D wireframe while predicting which slots are real corners and how they connect.
+						Scene tokens are anchored to real 3D points, so semantic evidence keeps its metric location; a
+						hull-cropped second pass and a multi-sample consensus sharpen the corners. The output supports
+						roof-area estimation, solar-panel layout, insurance assessment and renovation planning.</p>
+					<ul class="thread-metrics">
+						<li><span>0.654</span> HSS on unseen HoHo houses, state of the art (vertex F1 0.791)</li>
+						<li><span>1st</span> place at the CVPR S23DR challenge in 2026 and 2025</li>
+						<li><span>68M</span> parameters, trained on 4&times;H200, one house reconstructed in seconds</li>
+					</ul>
+					<p class="thread-pubs">WireDiT (WACV 2027) &middot; S23DR 2026 and 2025 winning solutions</p>
+				</article>
+				<article class="thread-card">
+					<div class="thread-kicker">Label-free 3D detection</div>
+					<h3>3D object detectors trained without a single human 3D label</h3>
+					<p>An autolabelling pipeline turns unlabelled driving video into 3D boxes: an off-the-shelf 2D
+						instance segmentation model finds objects, temporal consistency across frames aggregates their
+						points, and an outlier-robust template fit recovers metric size and pose. TCC-Det did this for
+						LiDAR, MonoSOWA for a single moving camera by separating object from camera motion and
+						normalising focal length across datasets, and MonoSOWA++ unified both into one fast pipeline
+						with confidence-scored pseudo-labels and pedestrian and cyclist support.</p>
+					<ul class="thread-metrics">
+						<li><span>500&times;</span> faster than the previous state of the art, 1.9 s per frame</li>
+						<li><span>25%</span> of KITTI labels plus pseudo-label pre-training beat training on 100%</li>
+						<li><span>SOTA</span> among annotation-free methods on KITTI and the Waymo Open Dataset</li>
+					</ul>
+					<p class="thread-pubs">TCC-Det (ECCV 2024) &middot; MonoSOWA (ICCV 2025) &middot; MonoSOWA++ (IJCV 2026)</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section id="publications" class="section">
 		<div class="container">
 			<h2 class="section-title">Selected Publications</h2>
+
+			<!-- WireDiT -->
+			<article class="pub-card">
+				<div class="pub-image">
+					<img src="images/wiredit-teaser.png"
+						alt="WireDiT pipeline: street-level capture, SfM reconstruction, predicted 3D wireframe, and applications">
+				</div>
+				<div class="pub-content">
+					<div class="pub-meta">WACV 2027 &middot; Accepted</div>
+					<h3 class="pub-title">WireDiT: A Vertex-Slot Diffusion Transformer for 3D Wireframe Reconstruction</h3>
+					<p class="pub-desc">A flow-matching diffusion transformer that reconstructs metric 3D building
+						wireframes from sparse street-level SfM points, depth and semantics by denoising 64 vertex slots
+						conditioned on point-anchored scene tokens. State of the art on HoHo (HSS 0.654, vertex F1 0.791)
+						and Building3D, reconstructing a house in seconds. Paper and code coming soon.</p>
+				</div>
+			</article>
 
 			<!-- MonoSOWA++ -->
 			<article class="pub-card">
@@ -185,6 +247,58 @@
 		</div>
 	</section>
 
+	<section id="background" class="section bg-light">
+		<div class="container">
+			<h2 class="section-title">Background</h2>
+			<div class="bg-grid">
+				<div class="bg-col">
+					<h3>Education</h3>
+					<ul class="bg-list">
+						<li><strong>PhD in Informatics</strong>, CTU Prague, 2024 &ndash; 2027 (expected). Visual Recognition
+							Group (Prof. Ji&#345;&iacute; Matas), advised by Dr. Luk&aacute;&scaron; Neumann.</li>
+						<li><strong>MSc in Cybernetics and Robotics</strong>, with honours, CTU Prague, 2021 &ndash; 2024.
+							Dean's Award for Exceptional Master's Thesis. Erasmus exchange at the University of Southern
+							Denmark.</li>
+					</ul>
+					<h3>Industry &amp; Teaching</h3>
+					<ul class="bg-list">
+						<li><strong>Junior Embedded Software Developer</strong>, Poll s.r.o., 2020 &ndash; 2023. Real-time
+							C/C++ firmware for ARM microcontrollers in HVAC and high-voltage DC/DC converter systems.</li>
+						<li><strong>Lab Instructor</strong>, <a
+								href="https://cw.fel.cvut.cz/b251/courses/becm33dpl/start">Deep Learning Essentials</a>,
+							CTU Prague, 2025 &ndash; present.</li>
+					</ul>
+				</div>
+				<div class="bg-col">
+					<h3>Talks</h3>
+					<ul class="bg-list">
+						<li><a href="https://cmp.felk.cvut.cz/colloquium/">CMP Colloquium</a>, Prague, 2026</li>
+						<li>Computer Vision Winter Workshop, Graz, 2025</li>
+					</ul>
+					<h3>Summer Schools</h3>
+					<ul class="bg-list">
+						<li><a href="https://www.eeml.eu/">Eastern European Machine Learning Summer School</a>,
+							Montenegro, 2026</li>
+						<li><a href="https://icvss.dmi.unict.it/icvss2025/">International Computer Vision Summer
+								School</a>, Sicily, 2025</li>
+					</ul>
+					<h3>Reviewing</h3>
+					<ul class="bg-list">
+						<li>ICCV 2025, BMVC 2026, AAAI 2027</li>
+					</ul>
+					<h3>Skills</h3>
+					<ul class="bg-list">
+						<li><strong>Modelling:</strong> diffusion and flow matching, DiT and Perceiver-style
+							transformers, set prediction, 3D detection and structured reconstruction, multi-view geometry,
+							weak and self-supervised learning.</li>
+						<li><strong>Systems:</strong> Python, PyTorch (DDP, bf16, Slurm multi-GPU training), C/C++, CUDA,
+							Linux, OpenCV, Open3D, PyTorch3D.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<footer class="footer">
 		<div class="container">
 			<div class="footer-links">
@@ -195,7 +309,7 @@
 					aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
 				<a href="mailto:jan.skvrna@cvut.cz" aria-label="Email"><i class="fas fa-envelope"></i></a>
 			</div>
-			<p class="copyright">&copy; 2025 Jan Skvrna. Built with a focus on clean research communication.</p>
+			<p class="copyright">&copy; 2026 Jan Skvrna. Built with a focus on clean research communication.</p>
 		</div>
 	</footer>
 
