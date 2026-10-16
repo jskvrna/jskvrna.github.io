@@ -372,6 +372,7 @@ a:hover {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: var(--spacing-md);
+    align-items: center;
     margin-bottom: var(--spacing-lg);
     background: white;
     /* Optional: Card style 
@@ -382,25 +383,21 @@ a:hover {
 }
 
 .pub-image {
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pub-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
     cursor: zoom-in;
 }
 
 .pub-image img:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
 .pub-image img:focus-visible {

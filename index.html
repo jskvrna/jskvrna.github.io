@@ -167,7 +167,7 @@
 			<!-- WireDiT -->
 			<article class="pub-card">
 				<div class="pub-image">
-					<img src="images/wiredit-thumb.png" data-full="images/wiredit-teaser.png"
+					<img src="images/wiredit-teaser.png"
 						alt="WireDiT pipeline: street-level capture, SfM reconstruction, predicted 3D wireframe, and applications">
 				</div>
 				<div class="pub-content">
@@ -205,7 +205,8 @@
 			<!-- MonoSOWA -->
 			<article class="pub-card">
 				<div class="pub-image">
-					<img src="images/monosowa-thumb.png" data-full="images/ICCV_poster_final.png" alt="MonoSOWA Poster">
+					<!-- Using the existing image path -->
+					<img src="images/ICCV_poster_final.png" alt="MonoSOWA Poster">
 				</div>
 				<div class="pub-content">
 					<div class="pub-meta">ICCV 2025</div>
@@ -225,8 +226,7 @@
 			<!-- TCC-Det -->
 			<article class="pub-card">
 				<div class="pub-image">
-					<img src="images/tccdet-thumb.png" data-full="images/ECCV%202024%20TCC-Det%20poster%20V3.png"
-						alt="TCC-Det Poster">
+					<img src="images/ECCV%202024%20TCC-Det%20poster%20V3.png" alt="TCC-Det Poster">
 				</div>
 				<div class="pub-content">
 					<div class="pub-meta">ECCV 2024</div>
@@ -341,7 +341,7 @@
 			const publicationImages = document.querySelectorAll('.pub-image img');
 
 			function openPosterModal(image) {
-				posterModalImage.src = image.dataset.full || image.src;
+				posterModalImage.src = image.src;
 				posterModalImage.alt = image.alt;
 				posterModal.classList.add('is-open');
 				posterModal.setAttribute('aria-hidden', 'false');
